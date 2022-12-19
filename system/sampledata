@@ -1,0 +1,47 @@
+
+        
+
+
+type            sets;
+libs            (sampling);
+writeControl    outputTime;
+writeInterval   1;
+interpolationScheme cellPoint;
+setFormat raw;
+sets
+(
+
+	XD075
+                {
+                        type    cloud;
+                        axis    y;
+                        points  (#include "coor075.dat");
+                        interpolate true;
+                }
+
+                XD150
+                {
+                        type    cloud;
+                        axis    y;
+                        points  (#include "coor150.dat");
+                        interpolate true;
+                }
+
+	top
+        {
+                type    cloud;
+                axis    x;
+                points  (#include "topcyl.dat");
+                interpolate true ;
+        }
+        bottom
+        {
+                type    cloud;
+                axis    x;
+                points  (#include "botcyl.dat");
+                interpolate true ;
+        }
+);
+fields          (p UMean);
+
+
